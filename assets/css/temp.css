@@ -1,0 +1,71 @@
+    /*
+    author :
+        @author : matthis houles
+        @for : portfolio
+        @started-on : 20/11/19
+        @finished-on : 
+
+    file :
+        @title : main.css
+        @path : /assets/css
+*/
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+/* 
+    alternance
+*/
+
+#alertAlternanceContainer {
+    margin-left : 70px;
+    margin-top : 50px;
+    
+    background-color : #eb4d4b;
+
+    box-shadow: 0 0 10px rgba(21, 21, 21, 0.2);
+
+    color : white;
+
+    font-size : 20px;
+    font-family: "Montserrat", sans-serif;
+    text-align: justify;
+    padding : 15px;
+}
+
+#AlertAlternanceTitle {
+    margin-bottom: 20px;
+
+    font-size : 25px;
+    font-family : 'Hammersmith One', sans-serif;
+    color : white;
+
+    padding : 20px;
+    background-color : #b84b4b;
+
+
+
+}
+#alternanceList,#alternanceList  li {
+    font-size: 20px;
+    font-family: "Montserrat", sans-serif;
+    list-style: inside;
+}
+
+li {
+    padding-left : 30px;
+}
+
+.alertLink {
+    text-decoration: underline;
+}
+
+
+@media screen and (max-width : 768px) {
+    #presText {
+        padding-top : 25px;
+    }
+
+    #alertAlternanceContainer {
+        margin-top : 50px;
+        margin-left : 0;
+    }
+}

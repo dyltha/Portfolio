@@ -1,0 +1,941 @@
+    /*
+    author :
+        @author : matthis houles
+        @for : portfolio
+        @started-on : 20/11/19
+        @finished-on : 
+
+    file :
+        @title : main.css
+        @path : /assets/css
+*/
+
+/*
+    fonts import
+*/
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+header {
+    background-color : white;
+}
+
+/*
+    General presets
+*/
+* {
+    margin : 0;
+    padding : 0;
+
+    user-select : none;
+}
+
+li {
+    list-style : none;
+}
+
+a, a:active {
+    color : white;
+    text-decoration : none;
+}
+
+*:focus {
+    outline : none;
+}
+
+textarea {
+    resize : none;
+}
+
+button {
+    border : none;
+    background : none;
+}
+
+/*
+    html
+        body
+*/
+
+html, body {
+    width : 100%;
+    min-height : 100vh;
+
+    scroll-behavior: smooth;
+}
+
+
+/* 
+    header
+*/
+header {
+    width : 100%;
+    height : 100vh;
+
+    display : flex;
+    flex-direction : column;
+    justify-content : center;
+
+    overflow : hidden;
+
+    position : relative;
+    z-index : 2;
+}
+
+.centerContainer {
+    max-width : 600px;
+    width : 50%;
+    height : 500px;
+
+    position : relative;
+
+    margin-left : auto;
+    margin-right : auto;
+
+    opacity : 0;
+    transform : translateY(50px);
+
+    animation : backgroundHeaderIn 1s ease-in-out forwards;
+    animation-delay : 0.5s;
+}
+
+#overflowImgContainer {
+    width : 100%;
+    height : 100%;
+    
+
+    overflow : hidden;
+
+    position : relative;
+    z-index : 2;
+
+    background-size: cover;
+    background-position : center;
+
+    box-shadow : 0 0 20px rgba(21, 21, 21, 0.5);
+}
+
+
+
+
+.titleContainer {
+    width : 100%;
+
+    display : flex;
+    align-items : center;
+    flex-wrap: nowrap;
+
+    position : absolute;
+    top : calc(50% - 30px);
+    left : -33%;
+
+    z-index : 1;
+    
+    font-family: 'Hammersmith One', sans-serif;
+    font-size : 60px;
+    letter-spacing: 8px;
+    white-space: nowrap;
+    font-weight: 600;
+
+    color : #212121;
+}
+
+.titleContainer.dark {
+    color : white;
+}
+
+
+
+/* 
+    navbar trigger
+*/
+
+#navbarTriggerContainer {
+    width : 100%;
+    height : auto;
+
+    padding : 10px;
+
+    position : fixed;
+    top : 0;
+    z-index : 20;
+
+    display : flex;
+    flex-direction : row;
+    align-items: center;
+
+    background-color : rgba(5,5,5, 0.95);
+}
+
+#logoLink {
+    width : 320px;
+    margin-left : 50px;
+}
+#logoHeaderImg {
+    width : 100%;
+}
+
+#navbarTIcon {
+    font-size : 30px;
+}
+#navbarTrigger {
+    width : 50px;
+    height : 50px;
+}
+#navbarTrigger:hover > #navbarTIcon {
+    transform: rotateY(180deg);
+    transition : 1s;
+    transition-delay: 0.1s;
+
+    cursor : pointer;
+}
+
+.NT-close {
+    color : white;
+}
+.NT-open {
+    color : white;
+}
+
+#navbarContainer {
+    width : 100%;
+    height : 100vh;
+
+    background-color : black;
+
+    position : fixed;
+    top : 0;
+
+    z-index : 10;
+
+    display : none;
+    flex-direction : column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+
+#navbar {
+    width : 100%;
+    height : 60%;
+
+    display : flex;
+    flex-direction : column;
+    align-items : center;
+    justify-content: space-around;
+}
+
+.navLink {
+    font-size : 50px;
+    font-family: 'Montserrat', sans-serif;
+
+    display: flex;
+    flex-direction: row;
+    align-items : center;
+
+    text-align: center;
+
+    position : relative;
+
+    opacity: 0;
+}
+
+#navbarContainer.NC-Display .navLink {
+    animation : navLinkDisplayIn 0.5s ease-in-out forwards;
+}
+
+#navbar .navLink:nth-child(1) {
+    animation-delay: 0.7s;
+}
+#navbar .navLink:nth-child(2) {
+    animation-delay: 1s;
+}
+#navbar .navLink:nth-child(3) {
+    animation-delay: 1.3s;
+}
+#navbar .navLink:nth-child(4) {
+    animation-delay: 1.6s;
+}
+#navbar .navLink:nth-child(5) {
+    animation-delay: 1.9s;
+}
+
+.navLink::after {
+    content : "";
+
+    height : 4px;
+
+    background-color : white;
+    bottom : -10px;
+
+    position : absolute;
+}
+
+.navLink:hover::after {
+    animation: navLinkHoverAnimationIn 0.5s ease-in-out forwards;
+    
+}
+.navLink:not(:hover)::after {
+    animation: navLinkHoverAnimationOut 0.5s ease-in-out forwards;
+}
+
+#navbarContainer.NC-Display {
+    animation : navbarFadeIn 0.5s ease-in-out forwards;
+    display : flex;
+}
+
+
+main {
+    width : 80%;
+    max-width : 1024px;
+    min-height : 100vh;
+
+    margin-left : auto;
+    margin-right : auto;
+}
+
+
+main > div {
+    /* dev */
+    min-height : 500px;
+    position : relative;
+
+    padding-top : 100px;
+
+
+    margin-bottom : 100px;
+
+}
+
+.sectionTitle {
+    padding : 25px 10px 25px 10px;
+
+    position : absolute;
+    z-index: 1;
+    top : 100px;
+
+    box-shadow: 0 0 10px rgba(21, 21, 21, 0.5);
+    
+    font-size : 20px;
+    font-family : 'Hammersmith One', sans-serif;
+    writing-mode : vertical-rl;
+    text-orientation : upright;
+    text-transform : uppercase;
+    color : white;
+
+}
+
+
+.sectionContent {
+    width : 100%;
+    height : auto;
+
+    padding-left : 60px;
+
+}
+
+.endPart {
+    margin-top : 500px;
+
+    background-color : red;
+}
+/* 
+    qui suis je
+*/
+#presText {
+    font-size : 25px;
+    color : #212121;
+    text-align: justify;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* 
+    compétences
+*/
+#competence > .sectionContent {
+    display : flex;
+    flex-direction : row;
+    justify-content: space-around;
+}
+
+.compItem {
+    display : flex;
+    flex-direction: column;
+
+    padding-top : 20px;
+    padding-bottom : 20px;
+}
+
+.compTitle {
+    text-transform : uppercase;
+    font-family : 'Hammersmith One', sans-serif;
+    font-size : 30px;
+    font-weight:  700;   
+}
+
+.compContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap : wrap;
+
+    font-family: 'Montserrat', sans-serif;
+}
+
+.compContent > div {
+    margin : 10px;
+    
+    padding : 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+
+    background-color : #fafafa;
+    box-shadow: 0 0 5px rgba(21, 21, 21, 0.15);
+    
+    font-size : 25px;
+    text-align: center;
+}
+
+
+
+.compContent > div > p {
+    font-size : 17px;
+    padding : 2px;
+}
+
+/* 
+    TRAVAUX
+*/
+
+.workItem {
+    width: 100%;
+    display : flex;
+    flex-direction : row;
+    justify-content: center;
+    align-items: center;
+
+    background-color : #fafafa;
+    box-shadow: 0 0 5px rgba(21, 21, 21, 0.15);
+
+    margin-bottom : 40px;
+}
+
+.workTitleImg {
+    width : 320px;
+}
+
+.workDescription {
+    font-family: 'Montserrat', sans-serif;
+    padding : 30px;
+    text-align: justify;
+
+    display : flex;
+    flex-direction: column;
+}
+
+.workTitleText {
+    padding : 20px;
+
+    font-family: 'Hammersmith One', sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+
+}
+
+.dlLink {
+    font-weight: 600;
+}
+.dlLink:hover {
+    text-decoration: underline;
+}
+
+/* 
+    Contact
+*/
+#contactInformationsContainer {
+    display : flex;
+    flex-direction : column;
+}
+
+.informationL {
+    padding-left : 20%;
+    padding-right : 20%;
+
+    margin-bottom : 10px;
+
+    font-size : 20px;
+
+    display : flex;
+    flex-direction : row;
+    justify-content: space-between;
+    flex-wrap : wrap;
+
+    font-family: 'Montserrat', sans-serif;
+    text-align: justify;
+}
+
+.infTitle {
+    font-weight : 600;
+}
+
+.infContent > a {
+    color : #212121;
+}
+.infContent > a:hover {
+    text-decoration: underline;
+}
+
+#contactForm {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: stretch;
+}
+
+.mailForm {
+    display: flex;
+    flex-direction: column;
+
+    padding-top : 40px;
+
+    width : 320px;
+    margin : 20px;
+}
+
+.mailForm > label {
+    font-size : 20px;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.mailForm > input {
+    background : none;
+    font-size : 15px;
+    color : #212121;
+    height : 50px;
+    
+    display : flex;
+    flex-direction : column;
+    justify-content: center;
+    
+    text-align: center;
+}
+
+.mailForm > textarea {
+    width : 100%;
+    height : 300px;
+}
+
+#sendButton {
+    width : 320px;
+    height : 50px;
+
+    margin-top : 25px;
+
+    font-family: 'Hammersmith One', sans-serif;
+    font-size: 20px;
+    color : white;
+
+    display : flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    transition : 0.2s;
+}
+
+#sendButton:hover {
+    box-shadow: 0 0 15px rgba(21, 21, 21, 0.5);
+    cursor : pointer;
+
+    color : #f1f1f1;
+    transition : 0.2s;
+}
+
+
+/* 
+    footer
+*/
+footer {
+    width : 100%;
+    height : auto;
+
+    margin-top : 75px;
+    padding : 25px 0 25px 0;
+
+    display : flex;
+    flex-direction : column;
+    justify-content : center;
+    align-items : center;
+
+    position : relative;
+
+    background-color : rgba(5, 5, 5, 0.98);
+
+    box-shadow : 0 0 25px rgba(21, 21, 21, 0.5);
+}
+
+#toTop {
+    position: absolute;
+    left : 20px;
+    bottom : 20px;
+}
+#toTop > a  {
+    font-size : 50px;
+}
+#toTop > a:hover > i {
+    animation: floattingIcon 1s forwards infinite alternate-reverse;
+}
+
+#footerImg {
+    width : 150px;
+    height : auto;
+}
+#footerSContainer {
+    width : 320px;
+
+    display : flex;
+    flex-direction : row;
+    justify-content: space-around;
+    align-items : center;
+}
+.SNLink {
+    font-size : 30px;
+}
+
+
+.SNLink > i {
+    transition : 0.2s;
+}
+.SNLink:hover > i{
+    transform: rotate(15deg);
+
+    transition : 0.2s;
+}
+
+/* 
+    Theme
+*/
+#themeTriggerContainer {
+    width : 50px;
+    height : 50px;
+    
+    
+    display : flex;
+    flex-direction : column;
+    justify-content: center;
+    align-items: center;
+
+    position : fixed;
+    bottom : 0;
+    right : 10px;
+    z-index : 10;
+
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+
+    background-color : rgba(5,5,5, 0.95);
+
+    transition : 0.5s;
+}
+
+#themeTriggerContainer.show {
+    bottom : 350px;
+
+    transition : 0.5s;
+}
+
+
+#themeOpenTrigger {
+    color : white;
+    font-size : 30px;
+
+    padding : 7px 7px 0 7px;
+
+    transition : 0.2s ease-out;
+    
+}
+#themeOpenTrigger:hover {
+    cursor : pointer;
+    transform: rotate(90deg);
+    transition : 0.2s ease-out;
+}
+
+#themeContainer {
+    width : 320px;
+    height : 350px;
+
+    display : flex;
+    flex-direction : column;
+    align-items : center;
+    justify-content: space-around;
+
+    position : fixed;
+    bottom : -350px;
+    right : 0;
+    background-color : rgba(5,5,5, 0.95);
+
+    box-shadow: 0 0 5px rgba(21, 21, 21, 0.5);
+
+    z-index : 10;
+
+    transition : 0.5s;
+}
+#themeContainer.show {
+    bottom : 0;
+    transition : 0.5s;
+}
+
+#titleThemeContainer {
+    width : 100%;
+    
+    padding-top : 15px;
+    padding-bottom : 10px;
+
+    text-align : center;
+    text-transform: uppercase;
+    color : white;
+    font-family: 'Hammersmith One', sans-serif;
+}
+
+#themeList {
+    width : 100%;
+    height : 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.activate {
+    background-color:  rgba(200,200,200,0.1);
+}
+
+.ThemeTrigger {
+    width : 100%;
+    padding-top : 20px;
+    padding-bottom : 20px;
+
+    display : flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+
+
+    text-align : center;
+    text-transform: uppercase;
+    color : white;
+    font-family: 'Montserrat', sans-serif;
+    font-size : 17px;
+}
+.ThemeTrigger:hover {
+    background-color :  rgba(200,200,200,0.1);
+    cursor : pointer;
+}
+
+.themeTitle {
+    margin-left : 50px;
+}
+
+#aleatoryIcon {
+    margin-right : 50px;
+}
+
+.ThemeColor {
+    width : 17px;
+    height : 17px;
+
+    border : 1px solid white;
+    margin-right : 50px;
+}
+#jungleColor {
+    background-color : #536a32;
+}
+#snowyColor {
+    background-color : #86A0B1;
+}
+#badlandsColor {
+    background-color : #D25F1F;
+}
+#purpleColor {
+    background-color: #5758BB;
+}
+
+
+/* 
+    ANIMATIONS
+*/
+@keyframes navLinkHoverAnimationIn {
+    0% {
+        width : 0;
+
+        background-color : white;
+    }
+    100% {
+        width : 100%;
+    }
+}
+
+@keyframes navLinkHoverAnimationOut {
+    0% {
+        width : 100%;
+
+        left : 0;
+    }
+    100% {
+        width : 0;
+        
+        left : 100%;
+
+        background-color : white;
+    }
+}
+
+@keyframes navLinkDisplayIn {
+    0% {
+        opacity : 0;
+
+        right : 40px;
+    }
+    100% {
+        opacity: 1;
+        right : 0;
+    }
+}
+
+
+@keyframes navbarFadeIn {
+    0% {
+        display : flex;
+        opacity: 0;
+    }
+
+    100% {
+        opacity : 1;
+    }
+}
+
+
+@keyframes backgroundHeaderIn {
+    0% {
+        transform : translateY(50px);;
+        opacity : 0;
+    }
+    100% {
+        transform : translateY(0);;
+        opacity : 1;
+    }
+}
+
+
+@keyframes backgroundFadeIn {
+    0% {
+        display : initial;
+        opacity : 0;
+    }
+    100% {
+        opacity : 1;
+    }
+}
+@keyframes backgroundFadeOut {
+    0% {
+        opacity : 1;
+    }
+    100% {
+        opacity : 0;
+        display : none;
+    }
+}
+
+@keyframes floattingIcon {
+    0% {
+        transform : translateY(-20px);
+    }
+    100% {
+        transform : translateY(0);
+    }
+}
+
+
+/* 
+    RESPONSIVE
+*/
+@media screen and (max-width : 768px) {
+    main > div {
+        padding-top : 75px;
+    }
+
+    .sectionTitle {
+        writing-mode: horizontal-tb;
+        text-orientation: upright;
+        position: static;
+        margin-bottom : 30px;
+    }
+
+    .sectionContent {
+        padding-left : 0;
+        position: static;
+    }
+
+    #presText {
+        padding-top : 130px;
+    }
+
+    .informationL {
+        padding-left : 0;
+        padding-right : 0;
+        flex-direction: column;
+    }
+
+    #contactForm {
+        flex-direction: column;
+        align-items : center;
+    }
+
+    .mailForm {
+        margin : 0;
+    }
+
+    .workItem {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width : 616px) {
+    .titleContainer {
+        white-space: normal;
+        text-align : center;
+        
+        width : 320px;
+
+        left : 0;
+    }
+
+    .centerContainer {
+        width : 100%;
+    }
+}
+
+@media screen and (max-width : 400px) {
+    #logoHeaderImg {
+        width : 200px;
+    }
+}
+
+@media screen and (max-width : 375px) {
+    .navLink {
+        font-size : 40px;
+    }
+}
+
+
+
+
+
+
+

@@ -1,0 +1,49 @@
+/*
+    author :
+        @author : matthis houles
+        @for : portfolio
+        @started-on : 20/11/19
+        @finished-on : 
+
+    file :
+        @title : main.css
+        @path : /assets/css
+*/
+
+#overflowImgContainer {
+    background-image: url("../../other/images/headerbg3.jpg");
+}
+
+.navLink::after {
+    background-color: #5758BB;
+}
+
+
+.sectionTitle {
+    background-color: #5758BB;
+}
+
+.compTitle {
+    color : #5758BB;
+}
+
+.mailForm > label {
+    color: #5758BB;
+}
+
+
+.mailForm > input, .mailForm > textarea {
+    border : 2px solid #5758BB;
+}
+
+#sendButton {
+    background-color: #5758BB;
+}
+
+.workTitleText {
+    color: #5758BB;
+}
+
+.dlLink {
+    color: #5758BB;
+}
